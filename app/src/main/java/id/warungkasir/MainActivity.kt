@@ -81,7 +81,7 @@ class MainActivity : Activity() {
     override fun onCreate(savedInstanceState: Bundle?) { super.onCreate(savedInstanceState); db=StoreDb(this); showHome() }
     private fun text(s:String,size:Float=16f,bold:Boolean=false): TextView = TextView(this).apply { text=s; textSize=size; setTextColor(0xff20252b.toInt()); if(bold) setTypeface(null,Typeface.BOLD); setPadding(10,9,10,9) }
     private fun button(s:String, action:()->Unit): Button = Button(this).apply { text=s; setOnClickListener { action() } }
-    private fun edit(hint:String, value:String=""): EditText = EditText(this).apply { this.hint=hint; setText(value); singleLine=true; setPadding(12,4,12,4) }
+    private fun edit(hint:String, value:String=""): EditText = EditText(this).apply { this.hint=hint; setText(value); issingleLine=true; setPadding(12,4,12,4) }
     private fun start(title:String) {
         root=LinearLayout(this).apply { orientation=LinearLayout.VERTICAL; setPadding(14,8,14,8); setBackgroundColor(0xfff6f7f9.toInt()) }
         val scroll=ScrollView(this); scroll.addView(root)
